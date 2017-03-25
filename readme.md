@@ -1,6 +1,6 @@
 # Boilerplate React App
 
-Simple ReatJS boilerplate with Webpack, Foundation and Karma.
+Simple ReactJS boilerplate with Webpack, Foundation and Karma.
 
 ## Installation
 
