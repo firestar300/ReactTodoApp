@@ -1,5 +1,4 @@
 var React = require('react');
-var TodoList = require('TodoList');
 
 var AddTodo = React.createClass({
   onFormSubmit: function(e) {
