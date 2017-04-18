@@ -1,17 +1,15 @@
-var redux = require('redux');
+var {combineReducers, compose, createStore} = require('redux');
 var {searchTextReducer, showCompletedReducer, todosReducer} = require('reducers');
 
-export var configure = () => {
-  var reducer = redux.combineReducers({
+export var configure = (initialState = {}) => {
+  var reducer = combineReducers({
     searchText: searchTextReducer,
     showCompleted: showCompletedReducer,
     todos: todosReducer
   });
 
-  var store = redux.createStore(reducer, redux.compose(
-    //redux.applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  ));
+  var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  var store = createStore(reducer, initialState, composeEnhancers());
 
   return store;
 };
