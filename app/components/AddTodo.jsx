@@ -16,11 +16,16 @@ export var AddTodo = React.createClass({
     }
   },
   render: function() {
+    var {dispatch} = this.props;
+
     return(
       <div className="container__footer">
         <form onSubmit={this.onFormSubmit}>
           <input type="text" placeholder="What do you need to do ?" ref="text" />
           <button className="button expanded" type="submit">Add Todo</button>
+          <button className="button expanded alert" type="button" onClick={() => {
+              dispatch(actions.removeTodos())
+            }}>Delete all todos</button>
         </form>
       </div>
     );

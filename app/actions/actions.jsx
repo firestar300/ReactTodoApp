@@ -31,3 +31,9 @@ export var toggleTodo = (id) => {
     id
   };
 };
+
+export var removeTodos = () => {
+  return {
+    type: 'REMOVE_TODOS'
+  }
+};

@@ -12,7 +12,7 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
-  it('shoumd generate toggle show completed action', () => {
+  it('should generate toggle show completed action', () => {
     var action = {
       type: 'TOGGLE_SHOW_COMPLETED'
     };
@@ -44,6 +44,15 @@ describe('Actions', () => {
       todos
     };
     var res = actions.addTodos(todos);
+
+    expect(res).toEqual(action);
+  });
+
+  it('should generate remove todos action', () => {
+    var action = {
+      type: 'REMOVE_TODOS'
+    };
+    var res = actions.removeTodos();
 
     expect(res).toEqual(action);
   });
